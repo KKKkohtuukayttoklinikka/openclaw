@@ -63,6 +63,30 @@ If Tailscale is part of the story:
 tailscale status --json
 ```
 
+## Update Management
+
+### Preview what it would do
+```bash
+openclaw update --dry-run
+```
+
+### Switch channel
+```bash
+openclaw update --channel beta
+openclaw update --channel extended-stable
+openclaw update --channel dev
+```
+
+### Check current channel / available updates
+```bash
+openclaw update status
+```
+
+### Force without restart (if you want to restart manually)
+```bash
+openclaw update --no-restart
+```
+
 ## Read the result, not guesses
 
 `openclaw qr --json` success means:
@@ -136,7 +160,7 @@ If there is not enough signal yet, ask for setup + exact app text instead of gue
 
 Good:
 
-- `The gateway is still loopback-only, so a node on another network can never reach it. Enable Tailscale Serve, restart the gateway, run openclaw qr again, rescan, then approve the pending device pairing.`
+- `The gateway is still loopback-only, so a node on another network can never reach it. Enable Tailscale Serve, restart the gateway, run openclaw qr again, rescan, then approve the pending device[...]
 
 Bad:
 
